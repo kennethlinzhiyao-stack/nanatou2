@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 12% 95%;
+    --foreground: 150 20% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 20% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 20% 18%;
+    --primary: 148 25% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 140 10% 92%;
+    --secondary-foreground: 150 20% 22%;
+    --muted: 140 8% 90%;
+    --muted-foreground: 150 8% 48%;
+    --accent: 43 65% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 10% 86%;
+    --input: 140 10% 90%;
+    --ring: 148 25% 36%;
+    --chart-1: 148 30% 42%;
+    --chart-2: 43 65% 53%;
+    --chart-3: 170 25% 38%;
+    --chart-4: 90 30% 50%;
+    --chart-5: 20 50% 55%;
+    --radius: 1rem;
+    --sidebar-background: 140 12% 96%;
+    --sidebar-foreground: 150 15% 25%;
+    --sidebar-primary: 148 25% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 10% 92%;
+    --sidebar-accent-foreground: 150 15% 25%;
+    --sidebar-border: 140 10% 88%;
+    --sidebar-ring: 148 25% 36%;
+    --jade: #4A7862;
+    --jade-light: #e8f0ec;
+    --gold: #D4AF37;
+    --gold-light: #f5ecd3;
+    --ink: #2c3e36;
+    --paper: #F2F5F3;
+    --mist: #FAFCFB;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(74, 120, 98, 0.08);
+  }
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: blur(36px);
+    border: 1px solid rgba(74, 120, 98, 0.1);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(74, 120, 98, 0.06);
+  }
+  .jade-glow {
+    box-shadow: 0 8px 40px rgba(74, 120, 98, 0.08), 0 2px 12px rgba(74, 120, 98, 0.04);
+  }
+  .gold-glow {
+    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.1), 0 1px 8px rgba(212, 175, 55, 0.06);
+  }
+  .ghost-btn {
+    background: transparent;
+    border: 1px solid rgba(74, 120, 98, 0.15);
+    color: var(--jade);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ghost-btn:hover {
+    border-color: rgba(74, 120, 98, 0.35);
+    color: var(--jade);
+    box-shadow: 0 4px 24px rgba(74, 120, 98, 0.08);
+    background: rgba(74, 120, 98, 0.04);
+  }
+  .ghost-btn:active {
+    transform: scale(0.97);
+  }
+  .film-grain {
+    position: relative;
+  }
+  .film-grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.02;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
